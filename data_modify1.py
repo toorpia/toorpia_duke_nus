@@ -5,7 +5,7 @@ class Data_Prepare():
 
 #Insert file name here like: "YOUR_FILE.csv" so that the program can read your file.
 
-    df = pd.read_csv("row_data/" + "human_single_time.csv")
+    df = pd.read_csv("row_data/" + "VirScan_zscores-Table 1.csv")
 
 # """
 #   Thank you for adding it! You are all set!
@@ -68,7 +68,7 @@ class Data_Prepare():
         #If you want to change name of the fix-data file, you can!
         #You can do: df1= df1.to_csv("NEW_FILE_NAME.csv", index=False, header=None)
         ###########
-        df1 = df1.to_csv("result/dependent_hit.csv", index=False, header=None)
+        df1 = df1.to_csv("result/dependent_hit_bat.csv", index=False, header=None)
         ############
 
 
