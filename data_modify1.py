@@ -60,8 +60,7 @@ class Data_Prepare():
 
 
         df1 = pd.DataFrame(protein_data)
-        # number = df1._get_numeric_data()
-        # number[number <= 0] = None
+        df1 = df1.replace(0, np.nan)
         df1 = df1.dropna(axis=0, thresh=2)
         df1 = df1.to_csv("result/dependent_hit.csv", index=False, header=None)
 
