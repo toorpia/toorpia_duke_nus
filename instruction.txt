@@ -22,14 +22,14 @@ df = pd.read_csv("YOUR_FILENAME.csv")
 
 After these 2 steps, you can run the code with the command line below in your directory.
 
-$ Python data_modify.py
+$ Python data_prepare.py
 
 #### Don't forget to go to your file directory! ####
 ex: If you put this code in download directory, you need to change directory like below.
 
 $ cd downloads
 $ cd toorpia_duke_nus
-$ python data_modify.py
+$ python data_prepare.py
 
 
 Option

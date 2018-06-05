@@ -32,7 +32,7 @@ ex: If you put this code in download directory, you need to change directory lik
 ```sh
 $ cd downloads
 $ cd toorpia_duke_nus
-$ python data_modify.py
+$ python data_prepare.py
 ```
 
 ### Option
