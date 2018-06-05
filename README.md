@@ -1,45 +1,41 @@
-##Data process: Analyze Human and Bat Data ##  
 
-###There are 2 steps before you run this code.###
+## Data preparation: Analyze Human and Bat Data ##  
 
-1: Please put your data-file in the same file.
-<br />
-<br />
+### Requirement
+- Python3
 
-2: Insert your data-file name in the line 8 of this code.
-<br />
-<br />
+### 2 steps before you run this code
+
+1: Please put your data-file in the same folder.
+2: Insert your data-file name in the line 8.
 
 Step1:
-In order to read your data-file, you have to put the data-file in the same file.
-or you can add your file path in the line 8 by yourself.
-<br />
-<br />
+In order to read your data-file, you have to put it in the same folder or you can add your file path in the line 8 by yourself.
 
 Step2:
-Please insert your file name like below.
-<br />
+Please insert your data-file name like below in Line8.
 
-Line8:
+```sh
 df = pd.read_csv("YOUR_FILENAME.csv")
-<br />
-<br />
+```
 
 
-After these 2 steps, you can run the code with the command line below in your directory.<br />
-<br />
+After these 2 steps, you can run the code with the command line below in your directory.
+```sh
+$ Python data_modify.py
+```
+`Don't forget to go to your file directory!`
+ex: If you put this code in download directory, you need to change directory like below.
+```sh
+$ cd downloads
+$ cd toorpia_duke_nus
+$ python data_modify.py
+```
 
-Python data_modify.py
-<br />
-<br />
+### Option
+If you want to change name of fixed-data file, you can change it in line 71:
+```sh
+df1 = df1.to_csv("NEW_FIXED-DATA_NAME.csv", index=False, header=None)
+```
 
-
-<Don't forget to go to the file directory.>
-<br />
-<br />
-
-ex: cd downloads <br />
-
-    cd toorpia_duke_nus <br />
-
-    python data_modify.py <br />
+### Now you are all set to use toorPIA! 

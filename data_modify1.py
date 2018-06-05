@@ -72,7 +72,7 @@ class Data_Prepare():
         ############
 
 
-        print("Ta-da! dependent_hit.csv is created in the file! You are done!")
+        print("Ta-da! fixed data csv file is created in the file! You are done!")
 
 data_prepare = Data_Prepare()
 data_prepare.protein()
