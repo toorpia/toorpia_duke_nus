@@ -3,7 +3,7 @@ import numpy as np
 
 class Data_Prepare():
 
-#Insert file name here like: "YOUR_FILE.csv"
+#Insert file name here like: "YOUR_FILE.csv" so that the program can read your file.
 
     df = pd.read_csv("row_data/" + "human_single_time.csv")
 
@@ -14,9 +14,12 @@ class Data_Prepare():
 #
 # """
 
-###### code start here #######
+###### Program start here #######
     df = df.sort_values(by= [list(df)[0], list(df)[1]])
+    num = df._get_numeric_data()
+    num[num < 10] = 0
     data = []
+
     ##hedader preparation
     header = []
     family_protein = list(df)[0] +  "-" + list(df)[1]
@@ -26,8 +29,6 @@ class Data_Prepare():
     data.append(header)
 
     # ##data preparation
-    num = df._get_numeric_data()
-    num[num < 10] = 0
     for each in df.values:
         row_set = []
         protein = each[0] + "-" + each[1]
@@ -57,12 +58,21 @@ class Data_Prepare():
                     if value == 0:
                         protein_data(None)
                     protein_data.append(value)
-
-
         df1 = pd.DataFrame(protein_data)
         df1 = df1.replace(0, np.nan)
         df1 = df1.dropna(axis=0, thresh=2)
+
+
+
+        ##Here is the part where you create csv file
+        #If you want to change name of the fix-data file, you can!
+        #You can do: df1= df1.to_csv("NEW_FILE_NAME.csv", index=False, header=None)
+        ###########
         df1 = df1.to_csv("result/dependent_hit.csv", index=False, header=None)
+        ############
+
+
+        print("Ta-da! dependent_hit.csv is created in the file! You are done!")
 
 data_prepare = Data_Prepare()
 data_prepare.protein()
