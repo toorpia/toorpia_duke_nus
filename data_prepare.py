@@ -5,7 +5,7 @@ class Data_Prepare():
 
 #Insert file name here like: "YOUR_FILE.csv" so that the program can read your file.
 
-    df = pd.read_csv("YOUR_FILE.csv")
+    df = pd.read_csv("row_data/PA_ES.csv")
 
 # """
 #   Thank you for adding it! You are all set!
@@ -75,4 +75,4 @@ class Data_Prepare():
         print("Ta-da! fixed data csv file is created in the file! You are done!")
 
 data_prepare = Data_Prepare()
-data_prepare.protein()
+# data_prepare.protein()
