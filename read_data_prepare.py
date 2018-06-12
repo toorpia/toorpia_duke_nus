@@ -1,23 +1,18 @@
 import pandas as pd
 import numpy as np
 
-class Data_Prepare():
-
-#Insert file name here like: "YOUR_FILE.csv" so that the program can read your file.
+class Read_Data_Prepare():
+    #Insert file name here like: "YOUR_FILE.csv" so that the program can read your file.
 
     df = pd.read_csv("row_data/bat_read.csv")
 
-# """
-#   Thank you for adding it! You are all set!
-#   Type commandline:::  Python data.modify1.py
-#   so you can get the fixed data-file!
-#
-# """
-
-###### Program start here #######
-    df = df.sort_values(by= [list(df)[0], list(df)[1]])
-    num = df._get_numeric_data()
-    num[num < 10] = 0
+    # """
+    #   Thank you for adding it! You are all set!
+    #   Type commandline:::  Python data.modify1.py
+    #   so you can get the fixed data-file!
+    #
+    # """
+    df = df.sort_values(by=[list(df)[0], list(df)[1]])
     data = []
 
     ##hedader preparation
@@ -59,8 +54,8 @@ class Data_Prepare():
                         protein_data(None)
                     protein_data.append(value)
         df1 = pd.DataFrame(protein_data)
-        df1 = df1.replace(0, np.nan)
-        df1 = df1.dropna(axis=0, thresh=2)
+        # df1 = df1.replace(0, np.nan)
+        # df1 = df1.dropna(axis=0, thresh=2)
 
 
 
@@ -68,11 +63,11 @@ class Data_Prepare():
         #If you want to change name of the fix-data file, you can!
         #You can do: df1= df1.to_csv("NEW_FILE_NAME.csv", index=False, header=None)
         ###########
-        df1 = df1.to_csv("result/bat_read.csv", index=False, header=None)
+        df1 = df1.to_csv("result/test1.csv", index=False, header=None)
         ############
 
 
         print("Ta-da! fixed data csv file is created in the file! You are done!")
 
-data_prepare = Data_Prepare()
-data_prepare.protein()
+read_data_prepare = Read_Data_Prepare()
+read_data_prepare.protein()
